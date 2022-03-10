@@ -1,0 +1,16 @@
+<h2>Список товаров</h2>
+        <%@products.each do |product| %>
+          <%= link_to product_path(product) do %>
+          <%=product.title%><%= image_tag(product.image, alt: "", class: "") %>
+        <% end %>
+        <% if can? [:update, :destroy], product %>
+          <div class="item">
+            <%= link_to 'Редактировать', edit_product_path(product), class: ""%>
+          </div>
+          <div class="item">
+          <%= button_to 'Удалить товар', product, class: "",
+            method: :delete,
+            data: { confirm: 'Are you sure?' }, remote: true %>
+            <%end%>
+          </div>
+        <% end %>

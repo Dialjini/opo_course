@@ -1,0 +1,10 @@
+<%@products.each do |product| %>
+  <% if can? :read, product %>
+    <div class="item">
+      <%= link_to supplier_product_path(product.supplier_id, product) do %>
+        <span><%=product.title%><%= image_tag(product.image, alt: "", class: "") %></span>
+      <% end %>
+    </div>
+  <%end%>
+<% end %>
+        

@@ -1,0 +1,17 @@
+
+
+<div class="item" id="">
+  <%= @supplier.company %>
+</div>
+
+<%= render 'products/list' %>
+
+<%if can? :create, Product%>
+<div class="item">
+  <%= link_to 'Добавить товар', new_supplier_product_path(@supplier), class: "" %>
+</div>
+<%end%>
+
+<div class="item">
+  <%= link_to "Back", root_path, class: "", id: "" %>
+</div>
