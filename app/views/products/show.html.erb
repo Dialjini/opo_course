@@ -1,0 +1,22 @@
+<div class="item" id=""> <%= @product.title %> </div>
+
+<div class="item">
+  <%= @product.description %>
+  <%= image_tag(@product.image, alt: "", class: "") %>
+</div>
+<% if can? [:update, :destroy], @product %>
+  <div class="item">
+    <%= link_to 'Редактировать', edit_supplier_product_path(@product.supplier, @product), class: ""%>
+  </div>
+  <div class="item">
+    <%= link_to 'Удалить', supplier_product_path(@product.supplier, @product), id: "",
+    method: :delete,
+    data: { confirm: 'Are you sure?' }, remote: true %>
+    <%end%>
+  </div>
+<div class="item">
+  <%= link_to "Buy", new_supplier_product_order_path(@product.supplier_id, @product, @product.orders.build), class: "", id: "" %>
+</div>
+<div class="item">
+  <%= link_to "Back", root_path, class: "", id: "" %>
+</div>

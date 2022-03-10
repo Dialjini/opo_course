@@ -1,0 +1,19 @@
+<div class="item">Список товаров</div>
+<div class="item">
+  <%@products.each do |product| %>
+    <% if can? :read, product %>
+      
+        <%= link_to supplier_product_path(product.supplier, product) do %>
+        <span><%=product.title%><%= image_tag(product.image, alt: "", class: "") %></span>
+      
+    <% end %>
+    <% if can? [:update, :destroy], product %>
+        <%= link_to 'Редактировать', edit_supplier_product_path(@supplier, product), class: ""%>
+        <%= link_to 'Удалить', [@supplier, product], id: "",
+        method: :delete,
+        data: { confirm: 'Are you sure?' }, remote: true %>
+        <%end%>
+      <%end%>
+    <% end %>
+</div>
+ 

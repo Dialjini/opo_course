@@ -1,0 +1,41 @@
+body{
+    background-color: grey;
+}
+
+div{
+    margin: 0; 
+    padding: 12px; 
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.item {
+    display: block;
+    width: 400px;
+    padding: 20px;
+    border: thick double #32a1ce;
+    border-collapse: collapse;
+}
+
+.item img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+span {
+    text-align: center;
+}
+
+.window {
+    text-align: right;
+    margin-left: auto;
+}
+
+a {
+    text-align: center;
+}

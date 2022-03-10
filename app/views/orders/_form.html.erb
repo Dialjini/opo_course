@@ -1,0 +1,14 @@
+<%= form_with model: [@product.supplier, @product, @order], local: true do |form| %>
+ 
+ 
+  <div class="">
+    <p>
+      <%= form.label :count_product %><br>
+      <%= form.number_field :count_product, class: "" %>
+    </p>
+  </div>
+
+  <%= form.submit class: "" %>
+
+ 
+<% end %>
