@@ -34,7 +34,6 @@ jobs:
         run: bundle exec rubocop
       - name: RSpec
         run: |
-          bundle exec rails db:create
           bundle exec rails db:setup
           bundle exec rspec
 
